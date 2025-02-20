@@ -1,44 +1,73 @@
-body{
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: rgb(121, 163, 78);
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../assets/fonts/gigamsxvilinusx_regular-44950427376.woff2') format('woff2'),
+       url('../assets/fonts/gigamsxvilinusx_regular-44950427376.woff') format('woff'),
+       url('../assets/fonts/gigamsxvilinusx_regular-44950427376.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CustomFont 1';
+  src: url('../assets/fonts/futura-book-mta-87427712910.ttf') format('woff2'),
+       url('../assets/fonts/futura-book-mta-87427712910.ttf') format('woff'),
+       url('../assets/fonts/futura-book-mta-87427712910.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-img{
-    width: 200px;
-    max-width: 100%;
-    margin-top: 20px;
-    margin-left: 1500px;
-    height: auto;
-}
-.navbar{
-    background-color: #097124;
-    height: 30px;
-    width: auto;
-border-radius: 1cap;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(5, 0, 9);
 }
 
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-.content {
-    max-width: 50%;
+.header {
+  height: 60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #3c6e47;
-    color: white;
-    border: none;
-    cursor: pointer;
+.logo {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
 }
-button:hover {
-    background-color: #2a4c33;
+
+.main-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+  font-family: 'CustomFont 1', sans-serif;
+}
+
+.left-section {
+  color: aliceblue;
+  height: 300px;
+  width: max-content;
+  margin-left: 40px;
+}
+
+.left-title {
+  font-size: 36px;
+  text-align: left;
+}
+
+.right-section {
+  color: white;
+  margin-left: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-container {
+  
 }
