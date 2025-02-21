@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'CustomFont';
   src: url('../assets/fonts/gigamsxvilinusx_regular-44950427376.woff2') format('woff2'),
-       url('../assets/fonts/gigamsxvilinusx_regular-44950427376.woff') format('woff'),
-       url('../assets/fonts/gigamsxvilinusx_regular-44950427376.ttf') format('truetype');
+    url('../assets/fonts/gigamsxvilinusx_regular-44950427376.woff') format('woff'),
+    url('../assets/fonts/gigamsxvilinusx_regular-44950427376.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'CustomFont 1';
   src: url('../assets/fonts/futura-book-mta-87427712910.ttf') format('woff2'),
-       url('../assets/fonts/futura-book-mta-87427712910.ttf') format('woff'),
-       url('../assets/fonts/futura-book-mta-87427712910.ttf') format('truetype');
+    url('../assets/fonts/futura-book-mta-87427712910.ttf') format('woff'),
+    url('../assets/fonts/futura-book-mta-87427712910.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -22,37 +23,50 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(5, 0, 9);
+  background-color: rgb(15, 9, 34);
 }
 
 .header {
-  width: 1800px;
+  width: 100%;
+  /* Full width to avoid overflow */
+  max-width: 1800px;
   height: 60px;
   color: white;
   display: flex;
-  align-items: start;
-  padding: 0 40px;
+  align-items: center;
+  justify-content: space-between;
+  /* Adjusted for flexibility */
+  padding: 0 20px;
+  background-color: #333;
 }
 
 .logo {
   font-size: 24px;
   text-decoration: none;
   color: white;
+  margin-left: 30px;
 }
 
 .main-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
-  margin-top: 100px;
+  align-items: flex-start;
+  margin-top: 50px;
   font-family: 'CustomFont 1', sans-serif;
+  width: 100%;
+  padding: 0 20px;
+  gap: 20px;
 }
 
 .left-section {
+  padding: 30px;
+  flex: 1;
+  max-width: 600px;
   color: aliceblue;
-  height: 300px;
-  width: max-content;
-  margin-left: 40px;
+  height: auto;
+  background-color: #333;
+  border-radius: 10px;
 }
 
 .left-title {
@@ -61,14 +75,323 @@ body {
 }
 
 .right-section {
+  flex: 1;
+  max-width: 600px;
   color: white;
-  margin-left: 20px;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.icon-container {
-  
+.info-one {
+  display: flex;
+  /* Enables Flexbox */
+  align-items: center;
+  /* Centers items vertically */
+  justify-content: space-between;
+  /* Spaces text and image evenly */
+  padding: 10px;
+  color: white;
+  gap: 0px;
+  font-family: 'CustomFont 1', sans-serif;
+  border-radius: 10px;
+  border-color: #8484ff;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.info-one img {
+  max-width: 100%;
+  /* Adjust size */
+  height: auto;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-section,
+  .right-section {
+    max-width: 80%;
+  }
+
+  .left-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-one {
+    flex-direction: column;
+    /* Stacks text and image vertically */
+    text-align: center;
+  }
+
+  .info-one img {
+    max-width: 80%;
+    /* Makes image responsive */
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .left-section,
+  .right-section {
+    max-width: 100%;
+  }
+
+  .left-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --shiny-cta-bg: #000000;
+  --shiny-cta-bg-subtle: #1a1818;
+  --shiny-cta-fg: #ffffff;
+  --shiny-cta-highlight: blue;
+  --shiny-cta-highlight-subtle: #8484ff;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+.shiny-cta {
+  --animation: gradient-angle linear infinite;
+  --duration: 3s;
+  --shadow-size: 2px;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1.25rem 2.5rem;
+  font-family: 'CustomFont 1', sans-serif;
+
+  font-size: 1.125rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 360px;
+  color: var(--shiny-cta-fg);
+  background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
+    conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+      transparent,
+      var(--shiny-cta-highlight) var(--gradient-percent),
+      var(--gradient-shine) calc(var(--gradient-percent) * 2),
+      var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+      transparent calc(var(--gradient-percent) * 4)) border-box;
+  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+
+  &::before,
+  &::after,
+  span::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+  }
+
+  &:active {
+    translate: 0 1px;
+  }
+}
+
+/* Dots pattern */
+.shiny-cta::before {
+  --size: calc(100% - var(--shadow-size) * 3);
+  --position: 2px;
+  --space: calc(var(--position) * 2);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle at var(--position) var(--position),
+      white calc(var(--position) / 4),
+      transparent 0) padding-box;
+  background-size: var(--space) var(--space);
+  background-repeat: space;
+  mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg),
+      black,
+      transparent 10% 90%,
+      black);
+  border-radius: inherit;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Inner shimmer */
+.shiny-cta::after {
+  --animation: shimmer linear infinite;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(-50deg,
+      transparent,
+      var(--shiny-cta-highlight),
+      transparent);
+  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+  opacity: 0.6;
+}
+
+.shiny-cta span {
+  z-index: 1;
+
+  &::before {
+    --size: calc(100% + 1rem);
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+    opacity: 0;
+  }
+}
+
+/* Animate */
+.shiny-cta {
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: var(--transition);
+  transition-property: --gradient-angle-offset, --gradient-percent,
+    --gradient-shine;
+
+  &,
+  &::before,
+  &::after {
+    animation: var(--animation) var(--duration),
+      var(--animation) calc(var(--duration) / 0.4) reverse paused;
+    animation-composition: add;
+  }
+
+  span::before {
+    transition: opacity var(--transition);
+    animation: calc(var(--duration) * 1.5) breathe linear infinite;
+  }
+}
+
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent: 20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine: var(--shiny-cta-highlight-subtle);
+
+  &,
+  &::before,
+  &::after {
+    animation-play-state: running;
+  }
+
+  span::before {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes breathe {
+
+  from,
+  to {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.2;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
 }
