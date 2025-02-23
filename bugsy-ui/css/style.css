@@ -28,16 +28,14 @@ body {
 
 .header {
   width: 100%;
-  /* Full width to avoid overflow */
-  max-width: 1800px;
+  max-width: 2000px;
   height: 60px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Adjusted for flexibility */
   padding: 0 20px;
-  background-color: #333;
+  background-color: #222;
 }
 
 .logo {
@@ -50,7 +48,7 @@ body {
 .main-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   margin-top: 50px;
   font-family: 'CustomFont 1', sans-serif;
@@ -65,8 +63,25 @@ body {
   max-width: 600px;
   color: aliceblue;
   height: auto;
-  background-color: #333;
   border-radius: 10px;
+  
+  /* Initial state: hidden and scaled down */
+  opacity: 0;
+  transform: scale(0.9);
+  
+  /* Animation */
+  animation: fadeInScale 1s ease-out forwards; /* Customize duration and easing */
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .left-title {
@@ -81,27 +96,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #333;
   padding: 20px;
   border-radius: 10px;
 }
 
 .info-one {
+  --x: 50%;
+  --y: 50%;
+  
   display: flex;
-  /* Enables Flexbox */
   align-items: center;
-  /* Centers items vertically */
-  justify-content: space-between;
-  /* Spaces text and image evenly */
-  padding: 10px;
+  justify-content: space-evenly;
+  padding: 15px 40px;
+  padding-left: 0px 40px;
+  padding-right:  0px 40px;
   color: white;
   gap: 0px;
   font-family: 'CustomFont 1', sans-serif;
-  border-radius: 10px;
-  border-color: #8484ff;
+  outline: none;
+  border-radius: 150px;
+
+  border: 3px solid transparent;
+  background: linear-gradient(rgb(15, 9, 34), #1e0a27) padding-box, 
+              radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #7936e4) border-box;
+  
+  transition: background-position 0.3s ease, transform 0.2s ease-in-out;
 }
 
-.info-text {
+.info-one-text {
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -109,7 +131,76 @@ body {
 
 .info-one img {
   max-width: 100%;
-  /* Adjust size */
+  height: auto;
+}
+
+.info-two {
+  --x: 50%;
+  --y: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  padding: 15px 40px;
+  padding-left: 0px 40px;
+  padding-right:  0px 40px;
+  color: white;
+  gap: 0px;
+  font-family: 'CustomFont 1', sans-serif;
+  outline: none;
+  border-radius: 150px;
+
+  border: 3px solid transparent;
+  background: linear-gradient(rgb(15, 9, 34), #1e0a27) padding-box, 
+              radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #7936e4) border-box;
+  
+  transition: background-position 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.info-two-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.info-two img {
+  max-width: 100%;
+  height: auto;
+}
+
+.info-three {
+  --x: 50%;
+  --y: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  padding: 15px 40px;
+  padding-left: 0px 40px;
+  padding-right:  0px 40px;
+  color: white;
+  gap: 0px;
+  font-family: 'CustomFont 1', sans-serif;
+  outline: none;
+  border-radius: 150px;
+
+  border: 3px solid transparent;
+  background: linear-gradient(rgb(15, 9, 34), #1e0a27) padding-box, 
+              radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #7936e4) border-box;
+  
+  transition: background-position 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.info-three-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.info-three img {
+  max-width: 100%;
   height: auto;
 }
 
