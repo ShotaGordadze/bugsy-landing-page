@@ -27,25 +27,36 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 2000px;
-  height: 60px;
-  color: white;
+  height: 60px; /* Adjust height as needed */
+  background-color: #222; /* Dark background */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 1000; /* Ensures it stays on top */
+}
+
+/* Navigation container */
+.nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  background-color: #222;
 }
 
+/* Logo styling */
 .logo {
-  font-size: 24px;
-  text-decoration: none;
-  color: white;
-  margin-left: 30px;
+  height:120px; /* Adjust as needed */
+  width: auto;
 }
+
 
 .main-content {
+  margin-top: 70px; /* Push content down so it doesn't go under the fixed header */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -224,21 +235,27 @@ body {
 }
 
 @media (max-width: 768px) {
-  .info-one {
-    flex-direction: column;
-    /* Stacks text and image vertically */
-    text-align: center;
+  .info-one,
+  .info-two,
+  .info-three {
+    flex-direction: row; /* Keeps text and image side by side */
+    flex-wrap: wrap;
+    text-align: left; /* Ensures normal text alignment */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
 
-  .info-one img {
-    max-width: 80%;
-    /* Makes image responsive */
+  .info-one-text,
+  .info-two-text,
+  .info-three-text {
+    max-width: 50%; /* Ensures text takes half of the width */
   }
 
-  .header {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
+  .info-one img,
+  .info-two img,
+  .info-three img {
+    max-width: 45%; /* Ensures the image takes the other half */
   }
 
   .main-content {
