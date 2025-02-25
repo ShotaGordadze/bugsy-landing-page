@@ -10,58 +10,67 @@
 
   <body>
     <!-- Header / Navigation -->
-    <header class="header">
-      <nav>
-        <img class="logo" src="assets/bugsy2 (1).png" />
-      </nav>
-    </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <section class="left-section">
-        <h1 class="left-title">მათთვის, ვინც პროგრამირებას 0-დან სწავლობს!</h1>
-        <p>გახდი C# დეველოპერი ბაგსისთან ერთად</p>
-      </section>
-
-      <section class="right-section">
-        <img src="assets/BugsyWithLogo-removebg.png" />
-      </section>
+    <div class="header-container">
+      <header class="header">
+        <nav>
+          <img class="logo" src="assets/bugsy3.png" />
+        </nav>
+      </header>
     </div>
 
-    <div class="info-container">
-      <section class="info">
-        <h1>რას გთავაზობთ?</h1>
-        <p>
-          ჩვენ გთავაზობთ საშუალებას პროგრამირების საწყისი დონეზე სწავლოთ და განახორციელოთ
-          პროექტები რეალურ პროგრამისტებთან ერთად.
-        </p>
-      </section>
-  
-      <section class="info">
-        <h1>კურსის შესახებ</h1>
-        <p>
-          კურსი შედგება საშუალებას სწავლოთ პროგრამირების საწყისი დონეზე. კურსი განახორციელდება
-          სამი თვის განმავლობაში.
-        </p>
-      </section>
+    <div class="hero">
+      <div class="main-content">
+        <section class="left-section">
+          <h1 class="left-title">
+            მათთვის, ვინც პროგრამირებას 0-დან სწავლობს!
+          </h1>
+          <p>გახდი C# დეველოპერი ბაგსისთან ერთად</p>
+        </section>
 
-      <section class="info">
-        <h1>კურსის შესახებ</h1>
-        <p>
-          კურსი შედგება საშუალებას სწავლოთ პროგრამირების საწყისი დონეზე. კურსი განახორციელდება
-          სამი თვის განმავლობაში.
-        </p>
-      </section>
-    </div>
-    
+        <section class="right-section">
+          <img src="assets/BugsyWithLogo-removebg.png" />
+        </section>
+      </div>
 
-    
+      <div class="info-container">
+        <section class="info">
+          <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">კურსის შესახებ</div>
+              <div class="card-back">
+                ეს კურსი განკუთვნილია დამწყები პროგრამისტებისთვის...
+              </div>
+            </div>
+          </div>
 
-    <!-- Call to Action -->
-    <div class="cta-container">
-      <button class="shiny-cta">
-        <span>დარეგისტრირდი</span>
-      </button>
+          <section class="info">
+            <div class="card" onclick="flipCard(this)">
+              <div class="card-inner">
+                <div class="card-front">რატომ ბაგსი?</div>
+                <div class="card-back">
+                  ეს კურსი განკუთვნილია დამწყები პროგრამისტებისთვის...
+                </div>
+              </div>
+            </div>
+
+            <section class="info">
+              <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                  <div class="card-front">ჩემს შესახებ</div>
+                  <div class="card-back">
+                    ეს კურსი განკუთვნილია დამწყები პროგრამისტებისთვის...
+                  </div>
+                </div>
+              </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta-container">
+        <button class="shiny-cta">
+          <span>დარეგისტრირდი</span>
+        </button>
+      </div>
     </div>
 
     <!-- Footer -->
