@@ -26,22 +26,51 @@
 /*Animations*/
 @keyframes fadeInMiddle {
   0% {
+    transform: translate(500px, 50%);
+    width: 1500px;
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  30% {
+    transform: translate(500px, 50%);
+    width: 1500px;
+    white-space: nowrap;
+  }
+
+  50% {
+    transform: translate(500px, 50%);
+    width: 1500px;
     opacity: 1;
-    transform: translateX(0);
-    position: fixed;
-    top: -50%;
-    left: -50%;
+  }
+
+  70% {
+    transform: translate(0, 0);
+    width: auto;
+    white-space: normal;
+    letter-spacing: 2px; /* Smooth word separation */
   }
 
   100% {
-    opacity: 1;
     transform: translate(0, 0);
-    position: static;
+    width: auto;
+    white-space: normal;
+    letter-spacing: normal;
   }
 }
 
+.fadeInMiddle {
+  display: inline-block;
+  animation: fadeInMiddle 5s ease forwards;
+  animation-delay: 0s;
+  text-align: center;
+}
+
 @keyframes fadeIn {
-  0% {
+  0%,
+  40%,
+  50%,
+  60% {
     opacity: 0;
   }
 
@@ -50,25 +79,19 @@
   }
 }
 
-.fadeInMiddle {
-  animation-name: fadeInMiddle;
-  animation: fadeInMiddle 2s ease-out forwards;
-  animation-delay: 1;
-}
-
 .fadeIn {
   animation-name: fadeIn;
-  animation: fadeIn 2s ease-out forwards;
-  animation-delay: 0;
+  animation: fadeIn 5.5s ease-out forwards;
 }
 
 /*Animations*/
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-width: 1280px; 
+  min-width: 1280px;
   overflow-x: hidden;
 }
 body {
@@ -132,7 +155,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
   width: 590px;
   height: 600px;
   font-size: 30px;
@@ -194,7 +216,7 @@ body {
 .info {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -204,7 +226,6 @@ body {
   height: 200px;
   perspective: 1000px;
   cursor: pointer;
-  border-radius: 10px;
   margin: 10px;
 }
 
@@ -238,6 +259,9 @@ body {
   color: white;
   font-size: 26px;
   font-weight: bold;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 10px;
 }
 
 .card-back {
@@ -279,6 +303,13 @@ body {
   syntax: "<color>";
   initial-value: white;
   inherits: false;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 .shiny-cta {
