@@ -23,68 +23,7 @@
   font-display: swap;
 }
 
-/*Animations*/
-@keyframes fadeInMiddle {
-  0% {
-    transform: translate(500px, 50%);
-    width: 1500px;
-    opacity: 0;
-    white-space: nowrap;
-  }
 
-  30% {
-    transform: translate(500px, 50%);
-    width: 1500px;
-    white-space: nowrap;
-  }
-
-  50% {
-    transform: translate(500px, 50%);
-    width: 1500px;
-    opacity: 1;
-  }
-
-  70% {
-    transform: translate(0, 0);
-    width: auto;
-    white-space: normal;
-    letter-spacing: 2px; /* Smooth word separation */
-  }
-
-  100% {
-    transform: translate(0, 0);
-    width: auto;
-    white-space: normal;
-    letter-spacing: normal;
-  }
-}
-
-.fadeInMiddle {
-  display: inline-block;
-  animation: fadeInMiddle 5s ease forwards;
-  animation-delay: 0s;
-  text-align: center;
-}
-
-@keyframes fadeIn {
-  0%,
-  40%,
-  50%,
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-  animation: fadeIn 5.5s ease-out forwards;
-}
-
-/*Animations*/
 
 html,
 body {
@@ -98,13 +37,14 @@ body {
   height: 100vh;
   display: grid;
   flex-direction: column;
-  background-color: rgb(15, 9, 34);
+  background-color: #1B1A40;
   justify-self: center;
 }
 
 .header {
   display: flex;
   justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
@@ -112,10 +52,10 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: 1280px;
-  height: 60px;
+  height: 80px;
   padding: 0 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 10000;
   border-radius: 10px;
   background-blend-mode: color-dodge;
 }
@@ -128,6 +68,7 @@ body {
 }
 
 .logo {
+  margin-top: 20px;
   position: sticky;
   height: 120px;
   width: auto;
@@ -135,8 +76,11 @@ body {
 
 .hero {
   display: grid;
-  margin-top: 70px;
+  margin-top: 90px;
   max-width: auto;
+  border-radius: 15px;
+  padding-top: 20px;  
+  background-color: #36355f;
 }
 
 .main-content {
@@ -148,6 +92,8 @@ body {
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
+  
+  background-color: #09091d;
 }
 
 .left-section {
@@ -171,15 +117,23 @@ body {
 .left-section p {
   font-size: 30px;
   color: #fff;
-  margin: 20px;
+  margin-left: 40px;
   font-family: "CustomFont 1", sans-serif;
   justify-content: center;
 }
 
 .left-title {
-  font-size: 48px;
-  text-align: left;
+  color: #8484ff;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+  text-align: left;
+  width: 100%;
 }
 
 .right-section {
@@ -201,7 +155,7 @@ body {
   border-radius: 10px;
 }
 
-.info-container {
+.info-container-1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -226,7 +180,7 @@ body {
   height: 200px;
   perspective: 1000px;
   cursor: pointer;
-  margin: 10px;
+  margin: 16px;
 }
 
 .card-inner {
@@ -256,21 +210,67 @@ body {
 }
 
 .card-front {
+  flex-direction: column;
   color: white;
   font-size: 26px;
   font-weight: bold;
   border-style: solid;
   border-color: #fff;
-  border-radius: 10px;
+  background-color: #09091d;
+}
+
+.card-1 .course-icon {
+  position: absolute;
+  bottom: 125px; 
+  right: 185px;   
+  width: 40px;    
+  height: 40px;
+  opacity: 1;    
+}
+
+.card-2 {
+  background-image: url("../assets/card2.jpg");
+}
+
+.card-3 {
+  background-image: url("../assets/card3.jpg");
 }
 
 .card-back {
   background-color: #fff;
   color: black;
+  border-style: solid;
+  border-color: black;
   font-size: 16px;
   transform: rotateY(180deg);
-  padding: 10px;
-  text-align: center;
+  padding: 15px;
+  text-align: left; /* <-- Important to align naturally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-back p {
+  margin: 0;
+  line-height: 1.5;
+  padding: 5px;
+}
+
+.card-back .inline-link {
+  display: inline; /* Ensure link appears inline */
+  color: blue;
+  text-decoration: none;
+  margin-left: 4px; /* minor spacing if needed */
+}
+
+.header .header-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  justify-items: right;
 }
 
 :root {
