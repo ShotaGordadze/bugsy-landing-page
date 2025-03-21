@@ -43,8 +43,7 @@ body {
 
 .header {
   display: flex;
-  justify-content: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -226,14 +225,6 @@ body {
   width: 40px;    
   height: 40px;
   opacity: 1;    
-}
-
-.card-2 {
-  background-image: url("../assets/card2.jpg");
-}
-
-.card-3 {
-  background-image: url("../assets/card3.jpg");
 }
 
 .card-back {
@@ -486,4 +477,153 @@ body {
   font-weight: 500;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 0; /* Remove any min-width restrictions */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make it take full screen height */
+  }
+
+  .header{
+    height: 50px;
+  }
+
+  .header .logo{
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  /* Ensure `.hero` is centered with even spacing */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distributes space evenly */
+    align-items: center;
+    width: 350px;
+    min-height: 1750px;
+    height: 2500px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 800px;
+  }
+  
+  /* Make `.main-content` stack elements in a vertical line */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 318px;
+    text-align: center;
+    height: 500px;
+  }
+  
+  /* Ensure `.left-section` is centered */
+  .left-section {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    height: 150px;
+  }
+
+.left-section h1 {
+  font-size: 14px;
+}
+
+.left-section p {
+  font-size: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+  
+  /* Ensure `.right-section` is centered */
+  .right-section {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin: 0;
+
+  }
+  
+  /* Ensure images are responsive */
+  .right-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+    display: none;
+  }
+
+  .info-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; /* Force row layout */
+    justify-content: center; /* Align in center */
+    gap: 10px; /* Space between elements */
+    width: 100%;
+    margin: auto;
+    height: auto;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row; /* Ensure items are in a row */
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    width: 800px;
+  }
+
+  .card {
+    width: 45%; /* Make sure two cards fit per row */
+    max-width: 100%;
+    padding: 10px; /* Prevents cards from being too wide */
+  }
+
+  .card-back {
+    width: 326px;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  footer p{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-title {
+    font-size: 24px;
+  }
+
+  .left-section p {
+    font-size: 16px;
+
+  }
+
+  .shiny-cta {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
 }

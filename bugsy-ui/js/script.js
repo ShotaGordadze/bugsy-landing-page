@@ -4,7 +4,7 @@
 
   document.querySelector('.shiny-cta').addEventListener('click', () => {
     window.open(
-      'https://drive.google.com/file/d/1uoXeN7bg4h_D961dk_aFUpOnJKL0IHOJ/view?usp=sharing', 
+      'https://docs.google.com/forms/d/1yUad3S1KrFy0hZ6TJxbNnPmmOLz7B80mnxQZR961kHs/edit', 
       '_blank' // opens in a new tab
     );
   });
