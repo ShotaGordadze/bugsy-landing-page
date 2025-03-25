@@ -154,6 +154,10 @@ body {
   border-radius: 10px;
 }
 
+.right-section img.mobile {
+  display: none;
+}
+
 .info-container-1 {
   display: flex;
   flex-direction: row;
@@ -501,6 +505,7 @@ body {
   .header .logo{
     height: 80px;
     margin-bottom: 20px;
+    margin-left: 40px;
   }
   
   /* Ensure `.hero` is centered with even spacing */
@@ -510,7 +515,7 @@ body {
     justify-content: space-around; /* Distributes space evenly */
     align-items: center;
     width: 350px;
-    min-height: 1750px;
+    min-height: 2000px;
     height: 2500px;
     padding: 20px;
     text-align: center;
@@ -565,13 +570,21 @@ body {
   
   /* Ensure images are responsive */
   .right-section img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-
     display: none;
   }
+
+  .right-section img.desktop {
+    display: none; 
+}
+}
+
+@media (max-width: 768px) {
+.right-section img.mobile {
+    display: block; 
+    width: 65%;
+    margin-left: 45%;
+    margin-top: 5px;
+}
 
   .info-container-1 {
     display: flex;
