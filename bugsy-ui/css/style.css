@@ -32,6 +32,7 @@ body {
   width: 100%;
   min-width: 1280px;
   overflow-x: hidden;
+  justify-content: center;
 }
 body {
   height: 100vh;
@@ -39,6 +40,7 @@ body {
   flex-direction: column;
   background-color: #1B1A40;
   justify-self: center;
+  align-items: center;
 }
 
 .header {
@@ -50,13 +52,17 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1280px;
   height: 80px;
   padding: 0 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10000;
   border-radius: 10px;
   background-blend-mode: color-dodge;
+}
+
+footer{
+  color: white;
+  text-align: center;
 }
 
 .nav {
@@ -76,10 +82,10 @@ body {
 .hero {
   display: grid;
   margin-top: 90px;
-  max-width: auto;
   border-radius: 15px;
   padding-top: 20px;  
   background-color: #36355f;
+  max-width: 1400px;
 }
 
 .main-content {
@@ -91,7 +97,6 @@ body {
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
-  
   background-color: #09091d;
 }
 
@@ -162,12 +167,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width: 1325px;
-  max-width: 1335px;
   height: 250px;
   margin: 20px;
   border-radius: 10px;
+  width: auto;
 }
 
 .info {
@@ -228,7 +231,7 @@ body {
   right: 185px;   
   width: 40px;    
   height: 40px;
-  opacity: 1;    
+  opacity: 1;  
 }
 
 .card-back {
@@ -251,6 +254,30 @@ body {
   margin: 0;
   line-height: 1.5;
   padding: 5px;
+}
+
+.p1 {
+  font-size: 21px;
+}
+
+.p2 {
+  font-size: 19px;
+}
+
+.p3 {
+  font-size: 23px;
+}
+
+.p4 {
+  font-size: 22px;
+}
+
+.p5 {
+  font-size: 20px;
+}
+
+.p6 {
+  font-size: 34px;
 }
 
 .card-back .inline-link {
@@ -467,176 +494,153 @@ body {
   }
 }
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: grid;
-  place-items: center;
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media (max-width: 768px) {
-
+/* Responsive Styles */
+@media screen and (max-width: 1280px) {
   html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 0; /* Remove any min-width restrictions */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Make it take full screen height */
+      min-width: 100%;
+      overflow-x: hidden;
   }
 
-  .header{
-    height: 50px;
+  .header {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
   }
 
-  .header .logo{
-    height: 80px;
-    margin-bottom: 20px;
-    margin-left: 40px;
+  .logo {
+      height: 80px;
+      margin-top: 10px;
   }
-  
-  /* Ensure `.hero` is centered with even spacing */
+}
+
+@media screen and (max-width: 768px) {
+  body {
+      height: auto;
+  }
+
+  .header {
+      position: relative;
+      transform: none;
+      left: 0;
+  }
+
   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; /* Distributes space evenly */
-    align-items: center;
-    width: 350px;
-    min-height: 2000px;
-    height: 2500px;
-    padding: 20px;
-    text-align: center;
-    margin-top: 800px;
+      margin-top: 20px;
   }
-  
-  /* Make `.main-content` stack elements in a vertical line */
+
   .main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 318px;
-    text-align: center;
-    height: 500px;
+      flex-direction: column;
+      width: 85%;
+      margin-left: 22px;
+      padding: 10px;
   }
-  
-  /* Ensure `.left-section` is centered */
+
   .left-section {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
-    justify-content: flex-start;
-    height: 150px;
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      text-align: center;
   }
 
-.left-section h1 {
-  font-size: 14px;
-}
-
-.left-section p {
-  font-size: 2px;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0px;
-}
-
-.hide-on-mobile {
-  display: none;
-}
-  
-  /* Ensure `.right-section` is centered */
-  .right-section {
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    margin: 0;
-
-  }
-  
-  /* Ensure images are responsive */
-  .right-section img {
-    display: none;
-  }
-
-  .right-section img.desktop {
-    display: none; 
-}
-}
-
-@media (max-width: 768px) {
-.right-section img.mobile {
-    display: block; 
-    width: 65%;
-    margin-left: 45%;
-    margin-top: 5px;
-}
-
-  .info-container-1 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; /* Force row layout */
-    justify-content: center; /* Align in center */
-    gap: 10px; /* Space between elements */
-    width: 100%;
-    margin: auto;
-    height: auto;
-  }
-
-  .info {
-    display: flex;
-    flex-direction: row; /* Ensure items are in a row */
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1000px;
-    width: 800px;
-  }
-
-  .card {
-    width: 45%; /* Make sure two cards fit per row */
-    max-width: 100%;
-    padding: 10px; /* Prevents cards from being too wide */
-  }
-
-  .card-back {
-    width: 326px;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-  }
-
-  footer p{
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .left-title {
-    font-size: 24px;
+  .left-section h1 {
+      font-size: 24px;
+      margin: 10px 0;
   }
 
   .left-section p {
-    font-size: 16px;
+      font-size: 18px;
+      margin-left: 0;
+  }
 
+  .right-section {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+  }
+
+  .right-section img.desktop {
+      display: none;
+  }
+
+  .right-section img.mobile {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+  }
+
+  .info-container-1 {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
+  }
+
+  .info {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+  }
+
+  .card {
+      width: 90%;
+      margin: 10px;
+  }
+
+  .card-front, .card-back {
+      font-size: 16px;
+  }
+
+  .card-1 .course-icon {
+      position: static;
+      margin-bottom: 10px;
+      width: 30px;
+      height: 30px;
+  }
+
+  .cta-container {
+      margin: 10px;
+  }
+  .card.flipped {
+    margin-left: 45px;
+  }
+
+  .p1{
+    font-size: 42px !important;
+  }
+
+  .p2{
+    font-size: 18px !important;
+  }
+
+  footer {
+      padding: 10px;
+      text-align: center;
+      color: white;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .left-title {
+      font-size: 22px;
+      text-align: center;
+  }
+
+  .left-section h1 {
+      font-size: 20px;
+  }
+
+  .left-section p {
+      font-size: 16px;
+  }
+
+  .card-back p {
+      font-size: 14px !important;
   }
 
   .shiny-cta {
-    font-size: 16px;
-    padding: 10px 20px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
   }
 }
